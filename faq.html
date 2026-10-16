@@ -5,13 +5,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>FAQ — True Owner Recovery</title>
 <meta name="description" content="Frequently asked questions about surplus funds recovery: is this legitimate, what does it cost, can I claim on my own, how do I verify the funds exist.">
+<link rel="icon" type="image/svg+xml" href="assets/logo.svg">
+<meta name="theme-color" content="#13293d">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
 <header class="site">
   <div class="nav-inner">
-    <a class="logo" href="index.html">True Owner <span>Recovery</span></a>
+    <a class="logo" href="index.html"><img src="assets/logo.svg" alt="True Owner Recovery logo">True Owner <span>Recovery</span></a>
     <nav class="main" aria-label="Main navigation">
       <a href="index.html">Home</a>
       <a href="how-it-works.html">How It Works</a>
@@ -167,5 +169,16 @@
   </div>
 </footer>
 
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+  var els=document.querySelectorAll('main section, .card, details');
+  els.forEach(function(e){e.classList.add('reveal')});
+  if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return;}
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target);}});
+  },{threshold:.08});
+  els.forEach(function(e){io.observe(e)});
+});
+</script>
 </body>
 </html>

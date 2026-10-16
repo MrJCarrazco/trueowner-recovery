@@ -5,13 +5,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>True Owner Recovery — Government-Held Surplus Funds, Returned to Their True Owners</title>
 <meta name="description" content="Government agencies may be holding surplus funds from the sale of your former property. We locate, document, and manage the recovery paperwork. No upfront cost — you pay nothing unless you receive your funds.">
+<link rel="icon" type="image/svg+xml" href="assets/logo.svg">
+<meta name="theme-color" content="#13293d">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
 <header class="site">
   <div class="nav-inner">
-    <a class="logo" href="index.html">True Owner <span>Recovery</span></a>
+    <a class="logo" href="index.html"><img src="assets/logo.svg" alt="True Owner Recovery logo">True Owner <span>Recovery</span></a>
     <nav class="main" aria-label="Main navigation">
       <a href="index.html" aria-current="page">Home</a>
       <a href="how-it-works.html">How It Works</a>
@@ -23,14 +25,20 @@
 
 <div class="hero">
   <div class="inner">
+    <img class="hero-badge" src="assets/logo.svg" alt="">
     <span class="eyebrow">Surplus Funds Recovery</span>
-    <h1>A government agency may be holding money that belongs to you.</h1>
+    <h1>A government agency may be holding money that <em>belongs to you</em>.</h1>
     <p class="lead">When a property is sold at a tax or foreclosure sale for more than
     what was owed, the extra money — the <em>surplus</em> — belongs to the former owner.
     Counties and states hold millions of dollars of it, waiting to be claimed. We help
     rightful owners get it back.</p>
     <a class="btn" href="contact.html">Check If Funds Are Yours</a>
     <a class="btn ghost" href="how-it-works.html">How It Works</a>
+    <div class="stat-strip">
+      <div class="stat"><b>$0</b><span>Upfront, ever</span></div>
+      <div class="stat"><b>100%</b><span>Verifiable with the county</span></div>
+      <div class="stat"><b>You first</b><span>Funds are paid to you</span></div>
+    </div>
   </div>
 </div>
 
@@ -98,7 +106,7 @@
 
   <section>
     <h2>Why people trust us with this</h2>
-    <ul>
+    <ul class="trust">
       <li><strong>No upfront fees, ever.</strong> Anyone who asks you for money up front
       to "release" funds is running a scam. We never do.</li>
       <li><strong>We never ask for your Social Security number, bank login, or any payment
@@ -113,7 +121,7 @@
     </ul>
   </section>
 
-  <section>
+  <section class="cta-band">
     <h2>Think we may have contacted you about funds?</h2>
     <p>If you received a letter, email, or message from us, it is because public records
     indicate a government agency is holding surplus funds that may belong to you or your
@@ -143,5 +151,16 @@
   </div>
 </footer>
 
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+  var els=document.querySelectorAll('main section, .card, details');
+  els.forEach(function(e){e.classList.add('reveal')});
+  if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return;}
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target);}});
+  },{threshold:.08});
+  els.forEach(function(e){io.observe(e)});
+});
+</script>
 </body>
 </html>

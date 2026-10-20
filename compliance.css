@@ -1,0 +1,6 @@
+/* Additive accessibility and policy navigation; original design retained. */
+:focus-visible{outline:3px solid #b36b00;outline-offset:4px}
+header :focus-visible,footer :focus-visible,.hero :focus-visible{outline-color:#ffe28a}
+.skip-link{position:fixed;left:1rem;top:-8rem;z-index:1000;background:#fff;color:#13293d;padding:.7rem}
+.skip-link:focus{top:.5rem}footer nav{max-width:1020px;margin:1rem auto;display:flex;gap:1rem;flex-wrap:wrap}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}.reveal{opacity:1!important;transform:none!important}}
